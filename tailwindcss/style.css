@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Arris shape */
+@layer utilities {
+    .arris-shape-up {
+        clip-path: polygon(100% 0, 100% calc(100% - 28px), calc(100% - 48px) 100%, 0 100%, 0 0);
+    }
+
+    .arris-shape-down {
+        clip-path: polygon(calc(100% - 24px) 0%, 100% calc(100% - calc(100% - 20px)), 100% 100%, 0 100%, 0 0);
+    }
+}

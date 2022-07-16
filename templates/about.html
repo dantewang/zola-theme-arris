@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="flex-1 mb-3">
+        <div class="arris-shape-down p-8 bg-kleinblue text-right">
+            <h1 class="text-white text-5xl">{{ page.title }}</h1>
+        </div>
+        <div class="p-8 bg-white prose max-w-none">
+            {{ page.content | safe }}
+        </div>
+    </section>
+{% endblock content %}

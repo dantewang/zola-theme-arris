@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/heml; charset=utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% set current_path = current_path | default(value="/") %}
+        {% if current_path == "/" %}
+        <title>
+            {{ config.title }}
+        </title>
+        {% else %}
+        <title>
+            {{ page.title | default(value=section.title) | default(value=config.title) }}
+        </title>
+        {% endif %}
+
+        <!-- Styles -->
+        <link type="text/css" rel="stylesheet" href="{{ get_url(path="css/style.css", trailing_slash=false) }}">
+
+        <!-- Favicon -->
+        <link type="shortcut icon" href="/favicon.ico">
+
+        <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+    </head>
+    <body class="min-h-screen justify-center bg-gray-100">
+        <div class="fixed inset-0 bg-[url(/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] -z-10"></div>
+        <header class="bg-kleinblue drop-shadow flex flex-row py-6 w-full">
+            <div class="container flex flex-row px-6 mx-auto">
+                <a href="/"><img class="flex-none" src="/img/logo.png" /></a>
+                <nav class="relative grow">
+                    <ul class="absolute bottom-0 right-0 flex flex-row gap-6">
+                        {% for menu in config.extra.menus %}
+                            <li class="text-white">
+                                <a class="hover:underline" href="{{ menu.path }}">{{ menu.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="container flex flex-row px-6 pt-10 pb-8 mx-auto">
+            {% block content %} {% endblock %}
+        </main>
+        <footer class="mx-auto m-2 w-fit">
+            <p class="p-4 text-center font-mono">
+                Zola Theme
+                <span class="ml-1 relative inline-block before:absolute before:-inset-0.5 before:block before:-skew-x-6 before:-skew-y-3 before:bg-kleinblue">
+                    <span class="relative text-white">Arris</span>
+                </span>
+            </p>
+        </footer>
+    </body>
+</html>
