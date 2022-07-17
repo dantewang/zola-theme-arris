@@ -22,3 +22,4 @@ menus = [
     {name = "关于", path = "/about/"},
     {name = "链接", path = "/links/"},
 ]
+toc_title = "ToC"
