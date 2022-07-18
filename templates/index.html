@@ -10,9 +10,9 @@
                         <img class="object-cover object-center w-full h-full" src="{{ page.permalink }}{{ page.extra.featured_image }}" />
                     </div>
                 {% endif %}
-                <div class="arris-shape-down p-8 pt-7 mb-3 mr-6 bg-kleinblue flex flex-row gap-6">
-                    <div class="mt-2 p-1 w-14 h-14 outline outline-2 outline-white">
-                        <div class="text-white text-center text-lg font-mono leading-6 w-full h-full flex flex-col">
+                <div class="flex flex-row gap-6 p-8 mb-3 mr-6 arris-shape-down pt-7 bg-kleinblue">
+                    <div class="p-1 mt-2 w-14 h-14 outline outline-2 outline-white">
+                        <div class="flex flex-col w-full h-full font-mono text-lg leading-6 text-center text-white">
                             <time class="flex-1">{{ page.date | date(format="%Y") }}</time>
                             <time class="flex-1">{{ page.date | date(format="%m%d") }}</time>
                         </div>

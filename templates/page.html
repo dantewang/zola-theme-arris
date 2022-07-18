@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <article class="flex-1 arris-shape-down p-8 mb-3 bg-white prose max-w-none">
+    <article class="flex-1 p-8 mb-3 prose bg-white arris-shape-down max-w-none">
         <h1 class="title">{{ page.title | safe }}</h1>
         <section>
             {% if page.description %}
@@ -10,9 +10,9 @@
         </section>
         {% if page.toc %}
             <section class="w-full my-4">
-                <details class="bg-white border border-kleinblue rounded-md open:bg-kleinblue duration-300 text-kleinblue open:text-white overflow-hidden">
-                    <summary class="bg-inherit px-5 py-4 text-lg cursor-pointer">{{ config.extra.toc_title }}</summary>
-                    <div class="bg-white px-5 py-4 ">
+                <details class="overflow-hidden duration-300 bg-white border rounded-md border-kleinblue open:bg-kleinblue text-kleinblue open:text-white">
+                    <summary class="px-5 py-4 text-lg cursor-pointer bg-inherit">{{ config.extra.toc_title }}</summary>
+                    <div class="px-5 py-4 bg-white ">
                         <ul>
                             {% for h1 in page.toc %}
                                 <li>

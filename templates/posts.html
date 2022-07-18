@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <section class="flex-1 arris-shape-down p-8 mb-3 bg-white">
+    <section class="flex-1 p-8 mb-3 bg-white arris-shape-down">
         {% set section = get_section(path=config.extra.default_section_name ~ "/_index.md") %}
         {% for page in section.pages | reverse %}
             <article class="text-kleinblue">
