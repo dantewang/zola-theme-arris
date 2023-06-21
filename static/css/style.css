@@ -1175,7 +1175,7 @@ video {
 
 .border-kleinblue {
   --tw-border-opacity: 1;
-  border-color: rgb(0 47 167 / var(--tw-border-opacity));
+  border-color: rgb(69 73 78 / var(--tw-border-opacity));
 }
 
 .bg-gray-100 {
@@ -1189,7 +1189,7 @@ video {
 
 .bg-kleinblue {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 47 167 / var(--tw-bg-opacity));
+  background-color: rgb(69 73 78 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1299,7 +1299,7 @@ video {
 
 .text-kleinblue {
   --tw-text-opacity: 1;
-  color: rgb(0 47 167 / var(--tw-text-opacity));
+  color: rgb(69 73 78 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1388,12 +1388,12 @@ video {
 .before\:bg-kleinblue::before {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
-  background-color: rgb(0 47 167 / var(--tw-bg-opacity));
+  background-color: rgb(69 73 78 / var(--tw-bg-opacity));
 }
 
 .open\:bg-kleinblue[open] {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 47 167 / var(--tw-bg-opacity));
+  background-color: rgb(69 73 78 / var(--tw-bg-opacity));
 }
 
 .open\:text-white[open] {
@@ -1410,5 +1410,5 @@ video {
 }
 
 .hover\:outline-kleinblue:hover {
-  outline-color: #002FA7;
+  outline-color: #45494E;
 }
