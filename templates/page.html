@@ -1,50 +1,52 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <article class="flex-1 p-8 prose bg-white arris-shape-down max-w-none">
-        <h1 class="title">{{ page.title | safe }}</h1>
-        <section>
-            {% if page.description %}
-                {{ page.description | safe }}
-            {% endif %}
-        </section>
-        {% if page.toc %}
-            <section class="w-full my-4">
-                <details class="overflow-hidden duration-300 bg-white border rounded-md border-kleinblue open:bg-kleinblue text-kleinblue open:text-white">
-                    <summary class="px-5 py-4 text-lg cursor-pointer bg-inherit">{{ config.extra.toc_title }}</summary>
-                    <div class="px-5 py-4 bg-white ">
-                        <ul>
-                            {% for h1 in page.toc %}
-                                <li>
-                                    <a href="{{ h1.permalink | safe }}">{{ h1.title | safe }}</a>
-                                    {% if h1.children %}
-                                        <ul>
-                                            {% for h2 in h1.children %}
-                                                <li>
-                                                    <a href="{{ h2.permalink | safe }}">{{ h2.title | safe }}</a>
-                                                </li>
-        
-                                                {% if h2.children %}
-                                                <ul>
-                                                    {% for h3 in h2.children %}
-                                                        <li>
-                                                            <a href="{{ h3.permalink | safe }}">{{ h3.title | safe }}</a>
-                                                        </li>
-                                                    {% endfor %}
-                                                </ul>
-                                                {% endif %}
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </details>
+    <article class="flex-1 drop-shadow">
+        <div class="flex-1 p-8 prose bg-white arris-shape-down max-w-none">
+            <h1 class="title">{{ page.title | safe }}</h1>
+            <section>
+                {% if page.description %}
+                    {{ page.description | safe }}
+                {% endif %}
             </section>
-        {% endif %}
-        <section>
-            {{ page.content | safe }}
-        </section>
+            {% if page.toc %}
+                <section class="w-full my-4">
+                    <details class="overflow-hidden duration-300 bg-white border rounded-md border-kleinblue open:bg-kleinblue text-kleinblue open:text-white">
+                        <summary class="px-5 py-4 text-lg cursor-pointer bg-inherit">{{ config.extra.toc_title }}</summary>
+                        <div class="px-5 py-4 bg-white ">
+                            <ul>
+                                {% for h1 in page.toc %}
+                                    <li>
+                                        <a href="{{ h1.permalink | safe }}">{{ h1.title | safe }}</a>
+                                        {% if h1.children %}
+                                            <ul>
+                                                {% for h2 in h1.children %}
+                                                    <li>
+                                                        <a href="{{ h2.permalink | safe }}">{{ h2.title | safe }}</a>
+                                                    </li>
+            
+                                                    {% if h2.children %}
+                                                    <ul>
+                                                        {% for h3 in h2.children %}
+                                                            <li>
+                                                                <a href="{{ h3.permalink | safe }}">{{ h3.title | safe }}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </details>
+                </section>
+            {% endif %}
+            <section>
+                {{ page.content | safe }}
+            </section>
+        </div>
     </article>
 {% endblock content %}

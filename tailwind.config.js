@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'kleinblue': {
-          DEFAULT: '#45494E',
+          DEFAULT: '#002FA7',
           100: '#DAE4FF',
           200: '#A7C0FF',
           300: '#749BFF',

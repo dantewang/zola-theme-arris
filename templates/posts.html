@@ -1,19 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <section class="flex-1 p-8 pb-0 bg-white arris-shape-down">
-        {% set section = get_section(path=config.extra.default_section_name ~ "/_index.md") %}
-        {% for page in section.pages %}
-            <article class="pl-4 mb-8 border-l-8 border-kleinblue text-kleinblue">
-                <div class="bg-white">
-                    <time class="flex-1">{{ page.date | date(format="%Y-%m-%d") }}</time>
-                </div>
-                <div>
-                    <h1 class="text-2xl">
-                        <a class="hover:underline" href="{{ page.permalink }}">{{ page.title }}</a>
-                    </h1>
-                </div>
-            </article>
-        {% endfor %}
+    <section class="flex-1 drop-shadow">
+        <div class="h-full p-8 pb-0 bg-white arris-shape-down">
+            {% set section = get_section(path=config.extra.default_section_name ~ "/_index.md") %}
+            {% for page in section.pages %}
+                <article class="pl-4 mb-8 border-l-8 border-kleinblue text-kleinblue">
+                    <div class="bg-white">
+                        <time class="flex-1">{{ page.date | date(format="%Y-%m-%d") }}</time>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">
+                            <a class="hover:underline" href="{{ page.permalink }}">{{ page.title }}</a>
+                        </h1>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
     </section>
 {% endblock content %}
