@@ -24,9 +24,8 @@
 
         <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
     </head>
-    <body class="justify-center min-h-screen bg-gray-100">
-        <div class="fixed inset-0 bg-[url(/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] -z-10"></div>
-        <header class="flex flex-row w-full py-6 bg-kleinblue drop-shadow">
+    <body class="justify-center min-h-screen bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500">
+        <header class="flex flex-row w-full pt-12">
             <div class="container flex flex-row px-6 mx-auto">
                 <a href="/"><img class="flex-none" src="/img/logo.png" /></a>
                 <nav class="relative grow">
@@ -44,11 +43,8 @@
             {% block content %} {% endblock %}
         </main>
         <footer class="m-2 mx-auto w-fit">
-            <p class="p-4 font-mono text-center">
-                Zola Theme
-                <span class="ml-1 relative inline-block before:absolute before:-inset-0.5 before:block before:-skew-x-6 before:-skew-y-3 before:bg-kleinblue">
-                    <span class="relative text-white">Arris</span>
-                </span>
+            <p class="p-4 font-mono text-center text-white">
+                Zola Theme Arris
             </p>
         </footer>
     </body>
